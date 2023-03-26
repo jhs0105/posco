@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <ul class="list">
+        <li data-name="green">초록</li>
+        <li data-name="yellow">노랑</li>
+        <li data-name="blue">파랑</li>
+        <li data-name="pink">분홍</li>
+      </ul>
+    </div>
+  </body>
+</html>
+<script>
+  const li = document.querySelectorAll(".list li");
+  li.forEach((item, idx) => {
+    item.addEventListener("click", function (e) {
+      console.log(e.target.dataset.name);
+    });
+  });
+</script>
