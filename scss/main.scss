@@ -1,19 +1,18 @@
 @import "vars";
 @import "mixins";
 #main-slide {
+  @for $i from 1 through 2 {
+    .visual0#{$i} {
+      background-image: url("../images/mainslide0#{$i}.jpg");
+    }
+  }
   li {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    img {
-      height: 100vh;
-      width: 100%;
-      object-fit: cover;
-    }
     .contents {
-      position: absolute;
       color: #fff;
       text-align: center;
       h3 {
@@ -33,6 +32,10 @@
         margin-top: 10px;
         i {
           font-size: 18px;
+        }
+        &:hover {
+          background-color: #fff;
+          color: #333;
         }
       }
     }
@@ -63,4 +66,102 @@
       }
     }
   }
+}
+#research {
+  display: flex;
+  position: relative;
+  .contents {
+    &:before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #333;
+      display: block;
+    }
+    position: absolute;
+    width: 35%;
+    padding: 0 80px;
+    box-sizing: border-box;
+    word-break: keep-all;
+    h3 {
+      font-size: 30px;
+      font-weight: 900;
+      padding: 40px 0;
+    }
+    p {
+      line-height: 1.8;
+      color: #888;
+      font-size: 17px;
+    }
+  }
+  .pagination {
+    margin-top: 50px;
+    font-weight: 800;
+  }
+  .swiper-pagination-bullet {
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 8px 20px;
+    background-color: transparent;
+    color: #333;
+    opacity: 1;
+    &-active {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+}
+#research-slide {
+  margin-left: 35%;
+  width: 2000px;
+  overflow: hidden;
+  position: relative;
+  ul {
+    li {
+      width: 700px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+      .info {
+        background-color: #1ca7e1;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 350px;
+        padding: 40px;
+        box-sizing: border-box;
+        h3 {
+          font-size: 32px;
+          font-weight: 800;
+        }
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          padding: 20px 0;
+        }
+        a {
+          font-size: 15px;
+        }
+        > div {
+          background-color: #49b9e7;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          a {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+#news {
+  height: 300px;
 }

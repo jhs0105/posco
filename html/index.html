@@ -100,8 +100,7 @@
     </header>
     <section id="main-slide">
       <ul class="swiper-wrapper">
-        <li class="swiper-slide">
-          <img src="../images/mainslide01.jpg" alt="" />
+        <li class="swiper-slide visual01">
           <div class="contents">
             <h3>
               미래기술연구원은 <br />
@@ -111,8 +110,7 @@
             <button>Learn more <i class="fa-solid fa-angle-right"></i></button>
           </div>
         </li>
-        <li class="swiper-slide">
-          <img src="../images/mainslide02.jpg" alt="" />
+        <li class="swiper-slide visual02">
           <div class="contents">
             <h3>
               포스코그룹 새로운 50년, <br />
@@ -150,7 +148,77 @@
         </div>
       </div>
     </section>
-    <section id="research"></section>
+    <section id="research">
+      <div class="contents">
+        <h3>연구분야</h3>
+        <p>
+          AI, 이차전지소재, 수소.저탄소에너지분야 3개 <br />
+          연구소 체제를 기반으로 포스코그룹 핵심 사업의 종합 연구를 추진합니다.
+        </p>
+
+        <div class="pagination"></div>
+      </div>
+      <div id="research-slide">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide">
+            <img src="../images/researchimg01.jpg" alt="" />
+            <div class="info">
+              <h3>AI</h3>
+              <p>
+                그룹 사업영역의 생산성 향상, 안전·환경 개선, 그린에너지 선도를
+                목표로 하는 ‘Green Intelligence’ 를 지향하며, 미래 혁신의
+                Enabler 조직으로, 지속 가능한 미래를 펼쳐내기 위해 미래 기술
+                준비를 선도합니다.
+              </p>
+              <a href="">more info</a>
+              <div>
+                <a href="">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <img src="../images/researchimg02.jpg" alt="" />
+            <div class="info">
+              <h3>AI</h3>
+              <p>
+                그룹 사업영역의 생산성 향상, 안전·환경 개선, 그린에너지 선도를
+                목표로 하는 ‘Green Intelligence’ 를 지향하며, 미래 혁신의
+                Enabler 조직으로, 지속 가능한 미래를 펼쳐내기 위해 미래 기술
+                준비를 선도합니다.
+              </p>
+              <a href="">more info</a>
+
+              <div>
+                <a href="">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="swiper-slide">
+            <img src="../images/researchimg03.jpg" alt="" />
+            <div class="info">
+              <h3>AI</h3>
+              <p>
+                그룹 사업영역의 생산성 향상, 안전·환경 개선, 그린에너지 선도를
+                목표로 하는 ‘Green Intelligence’ 를 지향하며, 미래 혁신의
+                Enabler 조직으로, 지속 가능한 미래를 펼쳐내기 위해 미래 기술
+                준비를 선도합니다.
+              </p>
+              <a href="">more info</a>
+              <div>
+                <a href="">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="news"></section>
   </body>
   <script>
     const swiper = new Swiper("#main-slide", {
@@ -158,6 +226,36 @@
       effect: "fade",
       fadeEffect: {
         crossFade: true,
+      },
+    });
+
+    const listName = ["AI", "이차전지소개", "수소저탄소"];
+    const researchswiper = new Swiper("#research #research-slide", {
+      loop: true,
+      slidesPerView: "auto",
+      spaceBetween: 100,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: "#research .pagination",
+        clickable: true,
+        renderBullet: function (idx, className) {
+          return '<span class="' + className + '">' + listName[idx] + "</span>";
+        },
+      },
+      on: {
+        slideChangeTransitionStart: function (swiper) {
+          gsap.to("#research-slide .swiper-slide-next", {
+            y: 100,
+            duration: 0.5,
+          });
+          gsap.to("#research-slide .swiper-slide-active", {
+            y: 0,
+            duration: 0.5,
+          });
+        },
       },
     });
   </script>
