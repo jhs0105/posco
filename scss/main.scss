@@ -67,6 +67,7 @@
     }
   }
 }
+
 #research {
   display: flex;
   position: relative;
@@ -78,7 +79,6 @@
       background-color: #333;
       display: block;
     }
-    position: absolute;
     width: 35%;
     padding: 0 80px;
     box-sizing: border-box;
@@ -113,10 +113,8 @@
   }
 }
 #research-slide {
-  margin-left: 35%;
-  width: 2000px;
+  width: 65%;
   overflow: hidden;
-  position: relative;
   ul {
     li {
       width: 700px;

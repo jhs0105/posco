@@ -71,7 +71,6 @@
   position: relative;
 }
 #research .contents {
-  position: absolute;
   width: 35%;
   padding: 0 80px;
   box-sizing: border-box;
@@ -113,10 +112,8 @@
 }
 
 #research-slide {
-  margin-left: 35%;
-  width: 2000px;
+  width: 65%;
   overflow: hidden;
-  position: relative;
 }
 #research-slide ul li {
   width: 700px;
